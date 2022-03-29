@@ -18,8 +18,17 @@
   color: var(--Very-Dark-Grayish-Blue);
 }
 
+.todo p.checked {
+  text-decoration: line-through;
+  color: var(--Light-Grayish-Blue);
+}
+
 .dark .todo p {
   color: var(--DT-Light-Grayish-Blue);
+}
+
+.dark .todo p.checked {
+  color: hsl(228, 14%, 58%);
 }
 
 .delete-todo {
@@ -93,11 +102,16 @@
 
 @media (min-width:768px) {
   .delete-todo {
-    opacity: 0;
+    
+    display: none;
+  }
+
+  .delete-todo:hover {
+    display: block;
   }
 
   .delete-todo.show-delete {
-    opacity: 1;
+    display: block;
   }
 
   .todo:hover {
