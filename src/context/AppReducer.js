@@ -15,6 +15,11 @@ const AppReducer = (state, action) => {
         todos: state.todos.filter(todo => todo.id !== action.payload)
       }
     
+    case 'CLEAR_COMPLETED':
+      return {
+        ...state,
+        todos: state.todos.filter(todo => todo.completed === false)
+      }
     case 'COMPLETED':
       return {
         ...state,
@@ -28,13 +33,23 @@ const AppReducer = (state, action) => {
   
     case 'GET_ALL_TODO':
       return {
-        state
+        ...state,
+        completedClassName : '',
+        activeClassName: ''
       }
 
     case 'GET_COMPLETED_TODO':
       return {
         ...state,
-        todos: state.todos.filter(todo => todo.completed === true)
+        completedClassName: "completed",
+        activeClassName: ''
+      }
+    
+    case 'GET_ACTIVE_TODO':
+      return {
+        ...state,
+        activeClassName: "active",
+        completedClassName: ''
       }
   }
 }

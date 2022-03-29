@@ -18,6 +18,14 @@
   color: var(--Very-Dark-Grayish-Blue);
 }
 
+.todo.completed {
+  display: none;
+}
+
+.todo.active {
+  display: none;
+}
+
 .todo p.checked {
   text-decoration: line-through;
   color: var(--Light-Grayish-Blue);

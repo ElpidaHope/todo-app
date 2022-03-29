@@ -5,7 +5,8 @@ import Todo from "./Todo";
 import ActionList from "./ActionList";
 
 const TodoList = () => {
-  const { todos } = useContext(GlobalContext)
+  const { todos, clearCompleted } = useContext(GlobalContext);
+  console.log()
   return (
         <div className="todo-list">
           <div>
@@ -14,11 +15,11 @@ const TodoList = () => {
             ))}
           </div>
           <div className="todo-list-footer">
-            <p>5 items left</p>
+            <p>{todos.filter(todo => todo.completed === false).length} items left</p>
             <div id="display-action-list">
               <ActionList />
             </div>
-            <p>Clear Completed</p>
+            <p onClick={() => clearCompleted()}>Clear Completed</p>
           </div>
         </div>
     )

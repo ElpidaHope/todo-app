@@ -5,26 +5,16 @@ import AppReducer from './AppReducer';
 import { nanoid } from 'nanoid';
 
 const initialState = {
-  todos: [
-    {
-      id:1,
-      "content": "Play Pes2019",
-      "completed": false
-    },
-    {
-      id:2,
-      "content": "Watch Dune 2021",
-      "completed": false
-    },
-  ],
-
+  todos: [],
+  completedClassName: '',
+  activeClassName: ''
 }
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
-
+  
   const addTodo = (content) => {
     dispatch({
       type: 'ADD_TODO',
@@ -48,14 +38,13 @@ export const GlobalProvider = ({ children }) => {
 
   const getAllTodo = () => {
     dispatch({
-      type: 'GET_ALL_TODO'
+      type: 'GET_ALL_TODO',
     })
   }
 
   const getActiveTodo = () => {
     dispatch({
       type: 'GET_ACTIVE_TODO',
-      // payload: completed
     })
   }
 
@@ -64,12 +53,21 @@ export const GlobalProvider = ({ children }) => {
       type: 'GET_COMPLETED_TODO'
     })
   }
+
+  const clearCompleted = () => {
+    dispatch({
+      type: 'CLEAR_COMPLETED'
+    })
+  }
   return (
     <GlobalContext.Provider value={{
       todos: state.todos,
+      completedClassName: state.completedClassName,
+      activeClassName: state.activeClassName,
       addTodo,
       deleteTodo,
       handleCompleted,
+      clearCompleted,
       getAllTodo,
       getActiveTodo,
       getCompletedTodo

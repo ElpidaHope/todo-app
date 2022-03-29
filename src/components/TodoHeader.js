@@ -27,7 +27,7 @@ const TodoHeader = ({isDark, setIsDark}) => {
           value={newTodo} 
           onChange={e => setNewTodo(e.target.value)}
           onKeyPress={e => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && newTodo.length > 0) {
               addTodo(newTodo)
               setNewTodo('')
             }

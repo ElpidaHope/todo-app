@@ -21,7 +21,7 @@ function App() {
             <TodoList />
           </div>
           <ActionList />
-          <p>Drag and drop to reorder list</p>
+          {/* <p>Drag and drop to reorder list</p> */}
         </div>
       </div>
     </GlobalProvider>
