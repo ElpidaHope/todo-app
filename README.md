@@ -21,8 +21,8 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/todoapp-using-reactusecontext-HymFhbbX9)
-- Live Site URL: [Add live site URL here](https://elpidahope.github.io/todo-app/)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/todoapp-using-reactusecontext-HymFhbbX9)
+- Live Site URL: [Live site](https://elpidahope.github.io/todo-app/)
 
 ## My process
 
